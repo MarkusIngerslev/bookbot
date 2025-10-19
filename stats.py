@@ -12,3 +12,13 @@ def get_char_count(text):
         else:
             char_list[text_to_lower[i]] = 1
     return char_list
+
+def sort_char_count(char_count):
+    char_list = []
+    for char in char_count:
+        char_list.append((char, char_count[char]))
+    char_list.sort(key=sort_on, reverse=True)
+    return char_list
+
+def sort_on(items):
+    return items[1]
